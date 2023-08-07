@@ -57,11 +57,11 @@ class WPGraphQLOrderByMetaField
                 //
                 // See docs on order and orderby here for more info on how this is handled in wp queries:
                 // https://developer.wordpress.org/reference/classes/wp_query/#order-orderby-parameters
-                $query_args['order'] = isset($query_args['orderby']['META_KEY']) ? $query_args['orderby']['META_KEY'] : 'DESC';
+                // $query_args['order'] = isset($query_args['orderby']['META_KEY']) ? $query_args['orderby']['META_KEY'] : 'DESC';
 
                 // We run this last which overwrites the processed value for 'orderby' with
                 // the required value for meta ordering as per the above Wordpress docs.
-                $query_args['orderby'] = 'meta_value';
+                $query_args['orderby'] = 'meta_value_num title';
             }
         }
         return $query_args;
