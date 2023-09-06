@@ -13,6 +13,19 @@ function add_supports() {
 }
 add_supports();
 
+function add_images() {
+  add_image_size( 'social-media', 1200, 630, array( 'center', 'center') );
+}
+
+add_action( 'after_setup_theme', 'add_images' );
+
+function add_menus() {
+  register_nav_menu( 'desktop_nav', __('Desktop Navigation') );
+  register_nav_menu( 'mobile_nav', __('Mobile Navigation') );
+  register_nav_menu( 'footer_nav', __('Footer Navigation') );
+}
+add_action( 'init', 'add_menus' );
+
 /**
  * @link http://stackoverflow.com/a/3261107/247223
  */
